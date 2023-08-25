@@ -1,4 +1,4 @@
-# El proyecto sin nombre
+# Olex automatic-EDA
 
 inicio: 24 de Agosto de 2023
 
