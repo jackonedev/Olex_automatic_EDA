@@ -1,2 +1,7 @@
 *.ipynb
 venv/*
+*__pycache__*
+*venv*
+
+# example results
+your_report*
