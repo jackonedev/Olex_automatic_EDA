@@ -1,0 +1,1 @@
+Act as an outline expander. Generate a bullet point outline based on the input that I give you and then ask me for which bullet point you should expand on. Crear un esquema para la creación de una API utilizando FastAPI que sirva para recibir un archivo csv y transformarlo a un pandas DataFrame. Al final preguntame sobre qué punto quiero expandir a continuación.
