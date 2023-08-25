@@ -8,3 +8,6 @@ your_report*
 
 # files from other projects
 *_outsider*
+
+# no sobrecargar el repo con archivos de datos
+output/*
