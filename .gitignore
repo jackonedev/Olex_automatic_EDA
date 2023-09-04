@@ -11,8 +11,8 @@ venv/*
 *_outsider*
 
 # no sobrecargar el repo con archivos de datos
-*output/*
-*input_data/*
+app/output/*
+app/input_data/*
 
 # important stuff
 *.pem
