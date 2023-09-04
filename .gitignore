@@ -5,14 +5,14 @@ venv/*
 *.env
 
 # example results
-your_report*
+*your_report*
 
 # files from other projects
 *_outsider*
 
 # no sobrecargar el repo con archivos de datos
-output/*
-input_data/*
+*output/*
+*input_data/*
 
 # important stuff
 *.pem
