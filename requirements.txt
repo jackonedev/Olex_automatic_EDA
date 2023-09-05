@@ -1,5 +1,4 @@
 ydata-profiling
-fastapi[all]
-#dev
-idlex
-jupyter
+fastapi
+python-multipart
+uvicorn
