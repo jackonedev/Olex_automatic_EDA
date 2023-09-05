@@ -1,18 +1,17 @@
-# Comments are provided throughout this file to help you get started.
-# If you need more help, visit the Docker compose reference guide at
-# https://docs.docker.com/compose/compose-file/
-
-# Here the instructions define your application as a service called "server".
-# This service is built from the Dockerfile in the current directory.
-# You can add other services your application may depend on here, such as a
-# database or a cache. For examples, see the Awesome Compose repository:
-# https://github.com/docker/awesome-compose
 services:
   server:
     build:
       context: .
     ports:
-      - 8090:8090
+      - 8080:8090
+    volumes:
+      - ./app:/app/app #:ro:read-only for not adding files to the host  # mount the current directory as read only -> for development
+    command: >
+      bash -c "uvicorn app.main:app --host 0.0.0.0 --port 8090 --reload"
+    
+    
+    # env-file:
+      # - ./.env
 
 # The commented out section below is an example of how to define a PostgreSQL
 # database that your application can use. `depends_on` tells Docker Compose to
@@ -47,3 +46,6 @@ services:
 #   db-password:
 #     file: db/password.txt
 
+
+# For examples, see the Awesome Compose repository:
+# https://github.com/docker/awesome-compose

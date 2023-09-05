@@ -41,3 +41,8 @@ async def create_upload_file(file: UploadFile = File(...), title: str = Query(..
         # Print any exception that occurs for debugging purposes
         print("Exception:", e)
         raise e
+    
+
+@app.get("/")
+async def root():
+    return {"message": "Bind Mount works!!! Show me the money!!!"}
