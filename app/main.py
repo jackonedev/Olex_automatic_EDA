@@ -17,6 +17,8 @@ async def create_upload_file(file: UploadFile = File(...), title: str = Query(..
     input_file_path = "input_data/" + file.filename
     report_file_path = "output/" + file.filename
 
+    ##TODO: Verify if the file is a csv
+
     # Save the uploaded file to disk
     with open(input_file_path, "wb") as buffer:
         buffer.write(await file.read())
