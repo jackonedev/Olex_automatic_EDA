@@ -1,14 +1,19 @@
 from fastapi import FastAPI, File, UploadFile, Query
 from fastapi.responses import FileResponse
-
-
-from tools import funciones_db, profiler
+from .tools import funciones_db, profiler
+import os
 
 app = FastAPI()
 
 
 @app.post("/uploadfile/")
 async def create_upload_file(file: UploadFile = File(...), title: str = Query(...)):
+
+    # change directory to app
+    cwd = os.getcwd()
+    appd = os.path.join(cwd, "app")
+    os.chdir(appd)
+
     input_file_path = "input_data/" + file.filename
     report_file_path = "output/" + file.filename
 
