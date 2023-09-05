@@ -1,4 +1,4 @@
-from fastapi import FastAPI, File, UploadFile, Query
+from fastapi import FastAPI, File, UploadFile, Query, HTTPException
 from fastapi.responses import FileResponse
 from .tools import funciones_db, profiler
 import os
@@ -17,7 +17,12 @@ async def create_upload_file(file: UploadFile = File(...), title: str = Query(..
     input_file_path = "input_data/" + file.filename
     report_file_path = "output/" + file.filename
 
-    ##TODO: Verify if the file is a csv
+    # === VALIDATE INPUT FILE ===
+    # Verify if the file is a csv
+    filename = file.filename
+    fileExtension = filename.split(".")[-1] in ("csv")
+    if not fileExtension:
+        raise HTTPException(status_code=415, detail="Unsupported file provided. Please provide a csv file.")
 
     # Save the uploaded file to disk
     with open(input_file_path, "wb") as buffer:
