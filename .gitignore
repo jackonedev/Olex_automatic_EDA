@@ -16,3 +16,6 @@ app/input_data/*
 
 # important stuff
 *.pem
+
+# example of docker-compose for production
+compose-prod.yaml
