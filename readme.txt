@@ -6,7 +6,7 @@ objetivo: crear un generador de reportes EDA automático que convierta archivos 
 
 motivación: crear web apis que puedan interactuar con objetos tipo bytes (archivos)
 
-producto final: que sea abierto al público
+producto final: reportes automatizados con nube de palabras y valores estadísticos de cada variable, interactivos por medio de html.
 
 Features:
 1- modo explorativo: para realizar un análisis más superficial y velóz
